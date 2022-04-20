@@ -1,6 +1,6 @@
-package swedishgreet;
+package org.example.provide;
 
-import greet.Greeting;
+import org.example.greet.Greeting;
 
 public class SwedishGreeting implements Greeting {
     @Override

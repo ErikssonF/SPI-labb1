@@ -1,6 +1,6 @@
 package consumer;
 
-import greet.Greeting;
+import org.example.greet.Greeting;
 
 import java.util.ServiceLoader;
 
