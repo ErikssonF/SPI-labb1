@@ -1,9 +1,7 @@
 package org.example.provide;
 
-import org.example.convert.Address;
 import org.example.convert.Converter;
 
-@Address("euro")
 public class EuroConverter implements Converter {
 
     public EuroConverter(){
@@ -12,7 +10,7 @@ public class EuroConverter implements Converter {
     @Override
     public Double convert(Double amount) {
 
-        return null;
+        return amount*0.097;
     }
 
 }
