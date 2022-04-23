@@ -1,32 +1,42 @@
 package org.example.consumer;
 
-import org.example.convert.Converter;
-
 import java.util.Scanner;
-import java.util.ServiceLoader;
 
 public class Main {
+    Scanner scan = new Scanner(System.in);
+    getConverter getConverter = new getConverter();
+
+    boolean run = true;
 
     public static void main(String[] args) {
 
-        ServiceLoader<Converter> serviceLoader = ServiceLoader.load(Converter.class);
+        Main main = new Main();
 
-        Scanner scan = new Scanner(System.in);
+        while (main.run) {
+            main.menu();
+        }
+    }
 
-        System.out.println("test");
+    public void menu() {
 
-        double amount = scan.nextDouble();
+        float amount;
 
-        serviceLoader.stream()
-                .map(ServiceLoader.Provider::get)
-                .filter(converter ->
-                        converter
-                                .getClass()
-                                .getSimpleName()
-                                .startsWith("Euro")).
-                forEach(greetingProvider ->
-                        System.out.println(greetingProvider.convert(amount)));
+        System.out.println("Valutaomväxlare från SEK till Euro eller Dansk Krona(Dkk) Dollar");
+        System.out.println("Välj 1 för Euro eller 2 för Dkk");
+        System.out.println("Alla andra alternativ kommer att stänga av programmet");
 
+        int choice = scan.nextInt();
 
+        if(choice == 1) {
+            System.out.println("Ange summa i SEK som du vill omvandla till Euro");
+            amount = scan.nextFloat();
+            getConverter.toEuro(amount);
+        } else if (choice == 2) {
+            System.out.println("Ange summa i SEK som du vill omvandla till Dkk");
+            amount = scan.nextFloat();
+            getConverter.toDollar(amount);
+        }else{
+            run = false;
+        }
     }
 }
