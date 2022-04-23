@@ -21,9 +21,9 @@ public class Main {
 
         float amount;
 
-        System.out.println("Valutaomväxlare från SEK till Euro eller Dansk Krona(Dkk) Dollar");
-        System.out.println("Välj 1 för Euro eller 2 för Dkk");
-        System.out.println("Alla andra alternativ kommer att stänga av programmet");
+        System.out.println("Valutaomväxlare från SEK till Euro eller Dansk Krona(Dkk) Dollar.");
+        System.out.println("Välj 1 för Euro eller 2 för Dkk.");
+        System.out.println("Välj 3 för att avsluta programmet.");
 
         int choice = scan.nextInt();
 
