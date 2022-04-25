@@ -4,7 +4,7 @@ import org.example.convert.Converter;
 
 import java.util.ServiceLoader;
 
-public class getConverter {
+public class GetConverter {
     ServiceLoader<Converter> serviceLoader = ServiceLoader.load(Converter.class);
 
     public void toEuro(Float amount) {
@@ -16,12 +16,12 @@ public class getConverter {
                                 .getClass()
                                 .getSimpleName()
                                 .startsWith("Euro")).
-                forEach(greetingProvider ->
-                        System.out.println(greetingProvider.convert(amount)));
+                forEach(convertProvider ->
+                        System.out.println(convertProvider.convert(amount)));
 
     }
 
-    public void toDollar(Float amount) {
+    public void toDkk(Float amount) {
 
         serviceLoader.stream()
                 .map(ServiceLoader.Provider::get)
@@ -30,8 +30,8 @@ public class getConverter {
                                 .getClass()
                                 .getSimpleName()
                                 .startsWith("Dkk")).
-                forEach(greetingProvider ->
-                        System.out.println(greetingProvider.convert(amount)));
+                forEach(convertProvider ->
+                        System.out.println(convertProvider.convert(amount)));
 
     }
 }
