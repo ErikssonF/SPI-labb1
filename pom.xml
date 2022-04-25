@@ -14,7 +14,6 @@
         <module>Consumer</module>
     </modules>
 
-
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
@@ -38,7 +37,5 @@
                 <version>3.8.1</version>
             </plugin>
         </plugins>
-
-
     </build>
 </project>

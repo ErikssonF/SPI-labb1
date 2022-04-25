@@ -5,6 +5,7 @@ import org.example.convert.Converter;
 import java.util.ServiceLoader;
 
 public class GetConverter {
+
     ServiceLoader<Converter> serviceLoader = ServiceLoader.load(Converter.class);
 
     public void toEuro(Float amount) {
@@ -15,8 +16,8 @@ public class GetConverter {
                         converter
                                 .getClass()
                                 .getSimpleName()
-                                .startsWith("Euro")).
-                forEach(convertProvider ->
+                                .startsWith("Euro"))
+                                .forEach(convertProvider ->
                         System.out.println(convertProvider.convert(amount)));
 
     }
@@ -29,8 +30,8 @@ public class GetConverter {
                         converter
                                 .getClass()
                                 .getSimpleName()
-                                .startsWith("Dkk")).
-                forEach(convertProvider ->
+                                .startsWith("Dkk"))
+                                .forEach(convertProvider ->
                         System.out.println(convertProvider.convert(amount)));
 
     }

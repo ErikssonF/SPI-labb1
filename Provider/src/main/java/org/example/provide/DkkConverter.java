@@ -1,9 +1,9 @@
 package org.example.provide;
 
-import org.example.convert.Address;
 import org.example.convert.Converter;
+import org.example.convert.CurrencyType;
 
-@Address("Dkk")
+@CurrencyType("Dkk")
 public class DkkConverter implements Converter {
 
     @Override
